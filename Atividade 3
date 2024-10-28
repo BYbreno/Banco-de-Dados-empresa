@@ -1,0 +1,10 @@
+CREATE PROCEDURE DailyProductReport
+AS
+BEGIN
+    SELECT 
+        sale_date,
+        SUM(product_quantity) AS total_products_sold
+    FROM sales
+    GROUP BY sale_date
+    ORDER BY sale_date;
+END;
